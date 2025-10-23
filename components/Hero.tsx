@@ -63,7 +63,7 @@ const Hero: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
               <a
-                href="#"
+                href="https://forms.gle/F94owXAxVxhSLCSB8"
                 className="bg-primary text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105 shadow-lg"
               >
                 {t('hero.cta')}

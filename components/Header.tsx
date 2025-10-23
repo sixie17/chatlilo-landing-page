@@ -88,7 +88,7 @@ const Header: React.FC = () => {
               {t("header.pricing")}
             </a>
             <a
-              href="#"
+              href="mailto:contact@chatlilo.com"
               className="text-dark hover:text-primary transition-colors duration-300"
             >
               {t("header.contact")}
