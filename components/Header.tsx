@@ -76,13 +76,13 @@ const Header: React.FC = () => {
           <Logo />
           <nav className="hidden md:flex items-center space-x-8">
             <a
-              href="#"
+              href="https://forms.gle/F94owXAxVxhSLCSB8"
               className="text-dark hover:text-primary transition-colors duration-300"
             >
               {t("header.features")}
             </a>
             <a
-              href="#"
+              href="https://forms.gle/F94owXAxVxhSLCSB8"
               className="text-dark hover:text-primary transition-colors duration-300"
             >
               {t("header.pricing")}

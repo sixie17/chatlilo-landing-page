@@ -13,7 +13,7 @@ const FinalCTA: React.FC = () => {
           {t('finalCta.subtitle')}
         </p>
         <a
-          href="#"
+          href="https://forms.gle/F94owXAxVxhSLCSB8"
           className="bg-primary text-white font-bold py-4 px-10 rounded-lg text-lg hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105 inline-block shadow-lg"
         >
           {t('finalCta.cta')}
