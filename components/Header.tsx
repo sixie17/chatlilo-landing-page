@@ -122,13 +122,13 @@ const Header: React.FC = () => {
               )}
             </div>
             <a
-              href="#"
+              href="https://forms.gle/F94owXAxVxhSLCSB8"
               className="text-dark font-medium hover:text-primary transition-colors duration-300"
             >
               {t("header.signIn")}
             </a>
             <a
-              href="#"
+              href="https://forms.gle/F94owXAxVxhSLCSB8"
               className="bg-primary text-white font-medium px-5 py-2 rounded-lg hover:bg-opacity-90 transition-colors duration-300 shadow-sm"
             >
               {t("header.getStarted")}
