@@ -11,8 +11,9 @@ export const translations = {
     hero: {
       title: "Engage your customers",
       subtitle: "Boost your online sales with our powerful AI chat solution. Automate responses, confirm orders, and provide 24/7 support.",
-      cta: "Start Free Trial",
+      cta: "Join Exclusive Waitlist",
       noCreditCard: "No credit card required",
+      waitlist: "Join the Waitlist",
       chat: {
         q1: "I have a question about your product.",
         a1: "Hi there! How can I help you?",
@@ -57,7 +58,7 @@ export const translations = {
     finalCta: {
       title: "Ready to Transform Your Customer Service?",
       subtitle: "Join hundreds of successful e-commerce stores and start delivering exceptional customer experiences with Chatlilo.",
-      cta: "Start Your Free Trial Today",
+      cta: "Join Exclusive Waitlist",
       subtext: "14 days free. No credit card required."
     },
     footer: {
@@ -81,8 +82,9 @@ export const translations = {
     hero: {
       title: "Interagissez avec vos clients",
       subtitle: "Augmentez vos ventes en ligne avec notre puissante solution de chat IA. Automatisez les réponses, confirmez les commandes et offrez un support 24/7.",
-      cta: "Commencer l'essai gratuit",
+      cta: "Rejoindre la liste d'attente",
       noCreditCard: "Aucune carte de crédit requise",
+      waitlist: "Rejoindre la liste d'attente",
       chat: {
         q1: "J'ai une question sur votre produit.",
         a1: "Bonjour ! Comment puis-je vous aider ?",
@@ -127,7 +129,7 @@ export const translations = {
     finalCta: {
       title: "Prêt à transformer votre service client ?",
       subtitle: "Rejoignez des centaines de boutiques e-commerce à succès et commencez à offrir des expériences client exceptionnelles avec Chatlilo.",
-      cta: "Commencez votre essai gratuit aujourd'hui",
+      cta: "Rejoignez la liste d'attente exclusive",
       subtext: "14 jours gratuits. Aucune carte de crédit requise."
     },
     footer: {
@@ -151,8 +153,9 @@ export const translations = {
     hero: {
       title: "تفاعل مع عملائك",
       subtitle: "عزز مبيعاتك عبر الإنترنت من خلال حل الدردشة القوي القائم على الذكاء الاصطناعي. قم بأتمتة الردود وتأكيد الطلبات وتقديم الدعم على مدار الساعة طوال أيام الأسبوع.",
-      cta: "ابدأ الفترة التجريبية المجانية",
+      cta: "انضم إلى قائمة الانتظار الحصرية",
       noCreditCard: "بطاقة الائتمان غير مطلوبة",
+      waitlist: "انضم إلى قائمة الانتظار",
       chat: {
         q1: "لدي سؤال عن منتجكم.",
         a1: "أهلاً بك! كيف يمكنني مساعدتك؟",
@@ -197,7 +200,7 @@ export const translations = {
     finalCta: {
       title: "هل أنت مستعد لتحويل خدمة عملائك؟",
       subtitle: "انضم إلى مئات المتاجر الإلكترونية الناجحة وابدأ في تقديم تجارب عملاء استثنائية مع Chatlilo.",
-      cta: "ابدأ تجربتك المجانية اليوم",
+      cta: "انضم إلى قائمة الانتظار الحصرية",
       subtext: "14 يومًا مجانًا. بطاقة الائتمان غير مطلوبة."
     },
     footer: {
