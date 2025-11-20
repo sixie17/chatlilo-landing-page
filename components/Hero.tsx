@@ -86,12 +86,11 @@ const CountdownTimer: React.FC = () => {
       const currentYear = now.getFullYear();
       const currentMonth = now.getMonth();
 
-      // Determine the target year (same year if we haven't passed December 15, otherwise next year)
       const targetYear =
         currentMonth === 11 && now.getDate() > 15
           ? currentYear + 1
           : currentYear;
-      const targetDate = new Date(targetYear, 11, 15, 0, 0, 0, 0); // December 15 at midnight
+      const targetDate = new Date(targetYear, 11, 15, 0, 0, 0, 0);
 
       const difference = targetDate.getTime() - now.getTime();
 
@@ -112,7 +111,7 @@ const CountdownTimer: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex gap-4 justify-center md:justify-start mb-8">
+    <div className="flex gap-3 justify-center">
       {[
         { label: "Days", value: timeLeft.days },
         { label: "Hours", value: timeLeft.hours },
@@ -121,9 +120,9 @@ const CountdownTimer: React.FC = () => {
       ].map((item) => (
         <div
           key={item.label}
-          className="flex flex-col items-center bg-white rounded-lg shadow-md p-4 min-w-[70px]"
+          className="flex flex-col items-center bg-white rounded-lg shadow-md p-3 min-w-[60px]"
         >
-          <span className="text-3xl font-bold text-primary">
+          <span className="text-2xl font-bold text-primary">
             {String(item.value).padStart(2, "0")}
           </span>
           <span className="text-xs text-gray-500 mt-1">{item.label}</span>
@@ -132,6 +131,56 @@ const CountdownTimer: React.FC = () => {
     </div>
   );
 };
+
+// ...existing code...
+const CountdownPopup: React.FC<{ translations: any }> = ({ translations }) => {
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 2000); // Show popup after 2 seconds
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (!isVisible) return null;
+
+  return (
+    <div className="fixed inset-0 backdrop-blur-sm bg-black/30 flex items-center justify-center z-50 p-4">
+      <div className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-8 relative animate-fade-in">
+        <button
+          onClick={() => setIsVisible(false)}
+          className="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6"
+            viewBox="0 0 20 20"
+            fill="currentColor"
+          >
+            <path
+              fillRule="evenodd"
+              d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+              clipRule="evenodd"
+            />
+          </svg>
+        </button>
+        <h2 className="text-3xl font-bold text-center text-secondary mb-2">
+          🚀 Launching Soon!
+        </h2>
+        <p className="text-center text-gray-600 mb-6">
+          {translations.countdownMessage || "Don't miss out on our launch!"}
+        </p>
+        <CountdownTimer />
+        <div className="mt-6">
+          <FormTriggerButton>{translations.waitlist}</FormTriggerButton>
+        </div>
+      </div>
+    </div>
+  );
+};
+// ...existing code...
 
 const Hero = ({ translations }: { translations: any }) => {
   return (
@@ -157,15 +206,9 @@ const Hero = ({ translations }: { translations: any }) => {
               <ChatWidget translations={translations.chat} />
             </div>
           </div>
-            <div className="pb-6 pt-6 w-full flex flex-col items-center justify-center overflow-hidden border-secondary rounded-2xl shadow-2xl">
-              <h1 className="text-4xl md:text-6xl text-secondary mb-3 font-bold">
-                Launching in:
-              </h1>
-              <CountdownTimer />
-              <FormTriggerButton>{translations.waitlist}</FormTriggerButton>
-            </div>
         </div>
       </section>
+      <CountdownPopup translations={translations} />
     </>
   );
 };
