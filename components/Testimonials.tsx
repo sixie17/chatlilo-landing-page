@@ -1,5 +1,4 @@
 import React from 'react';
-import { useTranslation } from '../i18nContext';
 
 const avatars = [
   'https://picsum.photos/100/100?random=1',
@@ -7,16 +6,15 @@ const avatars = [
   'https://picsum.photos/100/100?random=3',
 ];
 
-const Testimonials: React.FC = () => {
-  const { t } = useTranslation();
-  const testimonials = t('testimonials.cards') as unknown as { quote: string; name: string; title: string; }[];
+const Testimonials = ({ translations }: { translations: any }) => {
+  const testimonials = translations.cards as { quote: string; name: string; title: string; }[];
   
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-dark">{t('testimonials.title')}</h2>
-          <p className="mt-4 text-lg text-gray-600">{t('testimonials.subtitle')}</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-dark">{translations.title}</h2>
+          <p className="mt-4 text-lg text-gray-600">{translations.subtitle}</p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonials.map((testimonial, index) => (

@@ -1,6 +1,8 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import Logo from './Logo';
-import { useTranslation } from '../i18nContext';
+import WaitlistForm from './WaitListForm';
 
 const ChatBubble: React.FC<{ from: 'user' | 'bot'; children: React.ReactNode }> = ({ from, children }) => {
   const userStyles = 'bg-primary text-white self-end rounded-t-xl rounded-bl-xl rtl:rounded-br-xl rtl:rounded-bl-none';
@@ -12,8 +14,7 @@ const ChatBubble: React.FC<{ from: 'user' | 'bot'; children: React.ReactNode }> 
   );
 };
 
-const ChatWidget: React.FC = () => {
-  const { t } = useTranslation();
+const ChatWidget: React.FC<{ translations: any }> = ({ translations }) => {
   return (
     <div className="bg-white rounded-2xl shadow-2xl w-full max-w-sm border border-gray-100">
       <div className="bg-gray-50 p-4 rounded-t-2xl flex items-center justify-between border-b">
@@ -25,16 +26,16 @@ const ChatWidget: React.FC = () => {
         </button>
       </div>
       <div className="p-6 h-96 flex flex-col space-y-4 overflow-y-auto">
-        <ChatBubble from="bot">{t('hero.chat.q1')}</ChatBubble>
-        <ChatBubble from="user">{t('hero.chat.a1')}</ChatBubble>
-        <ChatBubble from="bot">{t('hero.chat.q2')}</ChatBubble>
-        <ChatBubble from="user">{t('hero.chat.a2')}</ChatBubble>
+        <ChatBubble from="bot">{translations.q1}</ChatBubble>
+        <ChatBubble from="user">{translations.a1}</ChatBubble>
+        <ChatBubble from="bot">{translations.q2}</ChatBubble>
+        <ChatBubble from="user">{translations.a2}</ChatBubble>
       </div>
       <div className="p-4 border-t bg-gray-50 rounded-b-2xl">
         <div className="relative">
           <input
             type="text"
-            placeholder={t('hero.chat.placeholder')}
+            placeholder={translations.placeholder}
             className="w-full bg-white border border-gray-300 rounded-full py-2 ps-4 pe-12 focus:outline-none focus:ring-2 focus:ring-primary/50"
           />
           <button className="absolute right-2 rtl:right-auto rtl:left-2 top-1/2 -translate-y-1/2 bg-primary text-white rounded-full p-2 hover:bg-opacity-90">
@@ -48,35 +49,57 @@ const ChatWidget: React.FC = () => {
   );
 };
 
-const Hero: React.FC = () => {
-  const { t } = useTranslation();
+const Hero = ({ translations }: { translations: any }) => {
+  const [showModal, setShowModal] = useState(false);
+
   return (
-    <section className="py-20 md:py-32 bg-light-bg">
-      <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="text-center md:text-start">
-            <h1 className="text-4xl md:text-6xl font-extrabold text-dark leading-tight mb-6">
-              {t('hero.title')}
-            </h1>
-            <p className="text-lg text-gray-600 mb-8">
-              {t('hero.subtitle')}
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-              <a
-                href="https://forms.gle/F94owXAxVxhSLCSB8"
-                className="bg-primary text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105 shadow-lg"
-              >
-                {t('hero.cta')}
-              </a>
+    <>
+      <section className="py-20 md:py-32 bg-light-bg">
+        <div className="container mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="text-center md:text-start">
+              <h1 className="text-4xl md:text-6xl font-extrabold text-dark leading-tight mb-6">
+                {translations.title}
+              </h1>
+              <p className="text-lg text-gray-600 mb-8">
+                {translations.subtitle}
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+                <button
+                  onClick={() => setShowModal(true)}
+                  className="bg-primary text-white font-bold py-3 px-8 rounded-lg text-lg hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                >
+                  {translations.cta}
+                </button>
+              </div>
+              <p className="mt-4 text-gray-500 text-sm">{translations.noCreditCard}</p>
             </div>
-            <p className="mt-4 text-gray-500 text-sm">{t('hero.noCreditCard')}</p>
-          </div>
-          <div className="flex justify-center items-center">
-            <ChatWidget />
+            <div className="flex justify-center items-center">
+              <ChatWidget translations={translations.chat} />
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+
+      {/* Waitlist Modal */}
+      {showModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 px-4">
+          <div className="bg-white rounded-2xl p-8 max-w-md w-full relative">
+            <button
+              onClick={() => setShowModal(false)}
+              className="absolute top-4 right-4 text-gray-400 hover:text-gray-600"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            <h2 className="text-2xl font-bold text-dark mb-4">Join Our Waitlist</h2>
+            <p className="text-gray-600 mb-6">Be the first to know when we launch!</p>
+            <WaitlistForm />
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 

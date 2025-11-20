@@ -1,5 +1,4 @@
 import React from "react";
-import { useTranslation } from "../i18nContext";
 import { PiMagicWandBold } from "react-icons/pi";
 
 const AiIcon = () => <PiMagicWandBold color="#07B097" size={30} />;
@@ -62,27 +61,29 @@ const icons = [
   <BulkMessageIcon />,
 ];
 
-const Features: React.FC = () => {
-  const { t } = useTranslation();
-  const features = t("features.cards") as unknown as {
+// The component now accepts a 'translations' prop
+const Features = ({ translations }: { translations: any }) => {
+  const features = translations.cards as {
     title: string;
     description: string;
   }[];
 
   return (
-    <section className="py-20 bg-white">
+    <section id="features" className="py-20 bg-white">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-dark">
-            {t("features.title")}
+            {translations.title}
           </h2>
-          <p className="mt-4 text-lg text-gray-600">{t("features.subtitle")}</p>
+          <p className="mt-4 text-lg text-gray-600">
+            {translations.subtitle}
+          </p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-light-bg p-8 rounded-xl text-center border border-gray-100 transition-all duration-300 hover:shadow-lg hover:-translate-y-2"
+              className="bg-light p-8 rounded-xl text-center border border-gray-100 transition-all duration-300 hover:shadow-lg hover:-translate-y-2"
             >
               <div className="flex items-center justify-center h-16 w-16 bg-primary/10 rounded-full mx-auto mb-6">
                 {icons[index]}
