@@ -1,22 +1,22 @@
+'use client';
 import React from 'react';
+import FormTriggerButton from './FormTriggerButton';
 
 const FinalCTA = ({ translations }: { translations: any }) => {
   return (
-    <section className="bg-dark text-white">
+    <section className="bg-dark">
       <div className="container mx-auto px-6 py-20 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
           {translations.title}
         </h2>
         <p className="text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
           {translations.subtitle}
         </p>
-        <a
-          href="https://forms.gle/F94owXAxVxhSLCSB8"
-          className="bg-primary text-white font-bold py-4 px-10 rounded-lg text-lg hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105 inline-block shadow-lg"
-        >
+        <FormTriggerButton className='text-white'>
           {translations.cta}
-        </a>
-        <p className="mt-4 text-gray-400 text-sm">{translations.subtext}</p>
+        </FormTriggerButton>
+        
+        {/* <p className="mt-4 text-gray-400 text-sm">{translations.subtext}</p> */}
       </div>
     </section>
   );

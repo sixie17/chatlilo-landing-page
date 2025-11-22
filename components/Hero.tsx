@@ -174,7 +174,7 @@ const CountdownPopup: React.FC<{ translations: any }> = ({ translations }) => {
         </p>
         <CountdownTimer />
         <div className="mt-6">
-          <FormTriggerButton>{translations.waitlist}</FormTriggerButton>
+          <FormTriggerButton className="text-white">{translations.waitlist}</FormTriggerButton>
         </div>
       </div>
     </div>
@@ -196,7 +196,7 @@ const Hero = ({ translations }: { translations: any }) => {
                 {translations.subtitle}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-                <FormTriggerButton>{translations.cta}</FormTriggerButton>
+                <FormTriggerButton className="text-white">{translations.cta}</FormTriggerButton>
               </div>
               <p className="mt-4 text-gray-500 text-sm">
                 {translations.noCreditCard}

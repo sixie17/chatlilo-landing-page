@@ -22,7 +22,7 @@ export default async function RootLayout({
 
   return (
     <html lang={lang} dir={dir}>
-      <body>
+      <body className="relative">
         <Header lang={lang} />
         <main>{children}</main>
         <Footer lang={lang} />

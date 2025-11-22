@@ -39,7 +39,7 @@ export default function WaitlistForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="max-w-md mx-auto space-y-4">
+    <form onSubmit={handleSubmit} className="relative max-w-md mx-auto space-y-4">
       <input
         type="text"
         placeholder="Your Name"

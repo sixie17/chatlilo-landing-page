@@ -23,7 +23,7 @@ export default async function HomePage({
       <Hero translations={dict.hero} />
       <Features translations={dict.features} />
       <FeatureShowcase translations={dict.featureShowcase} />
-      <Testimonials translations={dict.testimonials} />
+      {/* <Testimonials translations={dict.testimonials} /> */}
       <FinalCTA translations={dict.finalCta} />
     </>
   );

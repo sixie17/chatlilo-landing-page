@@ -111,7 +111,7 @@ export const translations = {
     finalCta: {
       title: "Ready to Transform Your Customer Service?",
       subtitle:
-        "Join hundreds of successful e-commerce stores and start delivering exceptional customer experiences with Chatlilo.",
+        "Secure your spot on the exclusive Chatlilo waitlist limited spots available!",
       cta: "Join Exclusive Waitlist",
       subtext: "14 days free. No credit card required.",
     },
@@ -169,7 +169,7 @@ export const translations = {
         {
           title: "Automatisation Après-Vente",
           description:
-            "Envoyez automatiquement des suivis, mises à jour d\’expédition et demandes d\’avis pour améliorer la satisfaction et la fidélisation.",
+            "Envoyez automatiquement des suivis, mises à jour d’expédition et demandes d’avis pour améliorer la satisfaction et la fidélisation.",
         },
         {
           title: "Synchronisation Google Sheets",
@@ -240,7 +240,7 @@ export const translations = {
     finalCta: {
       title: "Prêt à transformer votre service client ?",
       subtitle:
-        "Rejoignez des centaines de boutiques e-commerce à succès et commencez à offrir des expériences client exceptionnelles avec Chatlilo.",
+        "Réservez votre place sur la liste d’attente exclusive de Chatlilo les places sont limitées.",
       cta: "Rejoignez la liste d'attente exclusive",
       subtext: "14 jours gratuits. Aucune carte de crédit requise.",
     },
@@ -374,7 +374,7 @@ export const translations = {
     finalCta: {
       title: "هل أنت مستعد لتحويل خدمة عملائك؟",
       subtitle:
-        "انضم إلى مئات المتاجر الإلكترونية الناجحة وابدأ في تقديم تجارب عملاء استثنائية مع Chatlilo.",
+        "احجز مكانك في قائمة الانتظار الحصرية لـ Chatlilo الأماكن محدودة.",
       cta: "انضم إلى قائمة الانتظار الحصرية",
       subtext: "14 يومًا مجانًا. بطاقة الائتمان غير مطلوبة.",
     },

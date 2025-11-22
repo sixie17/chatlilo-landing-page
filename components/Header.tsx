@@ -3,6 +3,7 @@ import React, { useState, useRef, useEffect } from "react";
 import Logo from "./Logo";
 import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io";
 import { usePathname, useRouter } from "next/navigation";
+import FormTriggerButton from "./FormTriggerButton";
 
 const Header: React.FC<{ lang: string }> = ({ lang }) => {
   const [isLangMenuOpen, setIsLangMenuOpen] = useState(false);
@@ -47,18 +48,12 @@ const Header: React.FC<{ lang: string }> = ({ lang }) => {
         <div className="flex items-center justify-between">
           <Logo />
           <nav className="hidden md:flex items-center space-x-8">
-            <a
-              href="https://forms.gle/F94owXAxVxhSLCSB8"
-              className="text-dark hover:text-primary transition-colors duration-300"
-            >
+            <FormTriggerButton className="bg-transparent hover:bg-transparent text-dark hover:text-primary font-normal px-0 mx-0">
               Features
-            </a>
-            <a
-              href="https://forms.gle/F94owXAxVxhSLCSB8"
-              className="text-dark hover:text-primary transition-colors duration-300"
-            >
+            </FormTriggerButton>
+            <FormTriggerButton className="bg-transparent hover:bg-transparent text-dark hover:text-primary font-normal">
               Pricing
-            </a>
+            </FormTriggerButton>
             <a
               href="mailto:contact@chatlilo.com"
               className="text-dark hover:text-primary transition-colors duration-300"
@@ -93,18 +88,12 @@ const Header: React.FC<{ lang: string }> = ({ lang }) => {
                 </div>
               )}
             </div>
-            <a
-              href="https://forms.gle/F94owXAxVxhSLCSB8"
-              className="text-dark font-medium hover:text-primary transition-colors duration-300"
-            >
-              Sign In
-            </a>
-            <a
-              href="https://forms.gle/F94owXAxVxhSLCSB8"
-              className="bg-primary text-white font-medium px-5 py-2 rounded-lg hover:bg-opacity-90 transition-colors duration-300 shadow-sm"
-            >
+            <FormTriggerButton className="bg-transparent hover:bg-transparent text-secondary hover:text-primary font-semi-bold">
+              Sign Up
+            </FormTriggerButton>
+            <FormTriggerButton className="bg-primary text-white hover:bg-primary-dark font-normal">
               Get Started
-            </a>
+            </FormTriggerButton>
           </div>
           <div className="md:hidden">
             <button className="text-dark">

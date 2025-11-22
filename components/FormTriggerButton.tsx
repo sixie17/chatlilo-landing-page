@@ -5,21 +5,23 @@ import WaitlistForm from "./WaitListForm";
 
 export default function FormTriggerButton({
   children,
+  className = "",
 }: {
   children: React.ReactNode;
+  className?: string;
 }) {
   const [isFormOpen, setIsFormOpen] = useState(false);
   return (
     <>
       <button
         onClick={() => setIsFormOpen(true)}
-        className="px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary-dark transition hover:cursor-pointer font-bold"
+        className={` ${className} px-6 py-3 bg-primary rounded-lg hover:bg-primary-dark transition hover:cursor-pointer font-bold`}
       >
         {children}
       </button>
 
       {isFormOpen && (
-        <div className="fixed inset-0 backdrop-blur-sm bg-black/30 flex items-center justify-center z-50 px-4">
+        <div className="fixed inset-0 backdrop-blur-sm bg-black/30 flex items-center justify-center z-50 px-4 h-screen">
           <div className="bg-white rounded-2xl p-8 max-w-md w-full relative">
             <button
               onClick={() => setIsFormOpen(false)}
