@@ -55,7 +55,7 @@ const Header: React.FC<{ lang: string }> = ({ lang }) => {
               Pricing
             </FormTriggerButton>
             <a
-              href="mailto:contact@chatlilo.com"
+              href="https://wa.me/212640270818"
               className="text-dark hover:text-primary transition-colors duration-300"
             >
               Contact
